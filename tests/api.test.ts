@@ -2,8 +2,8 @@ import { randomUUID } from 'node:crypto';
 import request from 'supertest';
 import { beforeEach, describe, expect, it } from 'vitest';
 import type { Express } from 'express';
-import { createApp } from '../src/app.js';
-import { InMemoryChatRepository, InMemoryMessageStore } from './inMemory.js';
+import { createApp } from '../src/app';
+import { InMemoryChatRepository, InMemoryMessageStore } from './inMemory';
 
 let app: Express;
 

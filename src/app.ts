@@ -1,13 +1,13 @@
 import express, { type ErrorRequestHandler, type Express } from 'express';
 import { ZodError } from 'zod';
-import { ChatController } from './controllers/chatController.js';
-import { MessageController } from './controllers/messageController.js';
-import { UserController } from './controllers/userController.js';
-import { AppError } from './errors.js';
-import type { ChatRepository } from './repositories/chatRepository.js';
-import type { MessageStore } from './repositories/messageStore.js';
-import { buildRouter } from './routes/index.js';
-import { ChatService } from './services/chatService.js';
+import { ChatController } from './controllers/chatController';
+import { MessageController } from './controllers/messageController';
+import { UserController } from './controllers/userController';
+import { AppError } from './errors';
+import type { ChatRepository } from './repositories/chatRepository';
+import type { MessageStore } from './repositories/messageStore';
+import { buildRouter } from './routes/index';
+import { ChatService } from './services/chatService';
 
 export interface AppDeps {
   chatRepository: ChatRepository;

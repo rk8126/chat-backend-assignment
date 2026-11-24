@@ -5,7 +5,7 @@ import {
   type DocumentSnapshot,
   type Firestore,
 } from 'firebase-admin/firestore';
-import type { LastSeen, Message } from '../types.js';
+import type { LastSeen, Message } from '../types';
 
 export interface ListMessagesOptions {
   limit: number;

@@ -1,5 +1,5 @@
-import { Prisma, type PrismaClient } from '../generated/prisma/client.js';
-import type { Chat, MemberRole, User } from '../types.js';
+import { Prisma, type PrismaClient } from '../generated/prisma/client';
+import type { Chat, MemberRole, User } from '../types';
 
 export interface ChatRepository {
   createUser(name: string): Promise<User>;

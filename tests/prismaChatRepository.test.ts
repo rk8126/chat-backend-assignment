@@ -1,12 +1,13 @@
 import { readdir, readFile } from 'node:fs/promises';
-import pg from '../node_modules/@types/pg/index.js';
+import path from 'node:path';
+import pg from 'pg';
 import { afterAll, beforeAll, describe, expect, it } from 'vitest';
-import { createPrisma } from '../src/db/prisma.js';
-import type { PrismaClient } from '../src/generated/prisma/client.js';
-import { PrismaChatRepository } from '../src/repositories/chatRepository.js';
+import { createPrisma } from '../src/db/prisma';
+import type { PrismaClient } from '../src/generated/prisma/client';
+import { PrismaChatRepository } from '../src/repositories/chatRepository';
 
 const url = process.env.TEST_DATABASE_URL;
-const migrationsDir = new URL('../prisma/migrations/', import.meta.url);
+const migrationsDir = path.join(__dirname, '../prisma/migrations');
 
 async function resetDatabase(connectionString: string): Promise<void> {
   const client = new pg.Client({ connectionString });
@@ -18,7 +19,7 @@ async function resetDatabase(connectionString: string): Promise<void> {
       .map((d) => d.name)
       .sort();
     for (const dir of dirs) {
-      await client.query(await readFile(new URL(`${dir}/migration.sql`, migrationsDir), 'utf8'));
+      await client.query(await readFile(path.join(migrationsDir, dir, 'migration.sql'), 'utf8'));
     }
   } finally {
     await client.end();

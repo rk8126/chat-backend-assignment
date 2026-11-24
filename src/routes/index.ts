@@ -1,7 +1,7 @@
 import { Router } from 'express';
-import type { ChatController } from '../controllers/chatController.js';
-import type { MessageController } from '../controllers/messageController.js';
-import type { UserController } from '../controllers/userController.js';
+import type { ChatController } from '../controllers/chatController';
+import type { MessageController } from '../controllers/messageController';
+import type { UserController } from '../controllers/userController';
 
 export interface Controllers {
   user: UserController;

@@ -1,6 +1,6 @@
 import type { Request, Response } from 'express';
-import type { ChatService } from '../services/chatService.js';
-import * as v from '../validators/schemas.js';
+import type { ChatService } from '../services/chatService';
+import * as v from '../validators/schemas';
 
 export class ChatController {
   constructor(private readonly service: ChatService) {}

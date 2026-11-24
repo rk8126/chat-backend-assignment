@@ -3,7 +3,6 @@
   "version": "1.0.0",
   "description": "1:1 and group chat backend — users/chats in PostgreSQL, messages & read receipts in Firebase Firestore",
   "private": true,
-  "type": "module",
   "engines": {
     "node": ">=20"
   },

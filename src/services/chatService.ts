@@ -1,7 +1,7 @@
-import { badRequest, conflict, forbidden, notFound } from '../errors.js';
-import type { ChatRepository } from '../repositories/chatRepository.js';
-import type { LastSeenResult, MessageStore } from '../repositories/messageStore.js';
-import type { Chat, LastSeen, MemberRole, Message, User } from '../types.js';
+import { badRequest, conflict, forbidden, notFound } from '../errors';
+import type { ChatRepository } from '../repositories/chatRepository';
+import type { LastSeenResult, MessageStore } from '../repositories/messageStore';
+import type { Chat, LastSeen, MemberRole, Message, User } from '../types';
 
 export class ChatService {
   constructor(

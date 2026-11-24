@@ -2,7 +2,7 @@ import { randomUUID } from 'node:crypto';
 import { initializeApp, getApps } from 'firebase-admin/app';
 import { getFirestore, type Firestore } from 'firebase-admin/firestore';
 import { afterAll, beforeAll, describe, expect, it } from 'vitest';
-import { FirestoreMessageStore } from '../src/repositories/messageStore.js';
+import { FirestoreMessageStore } from '../src/repositories/messageStore';
 
 const emulator = process.env.FIRESTORE_EMULATOR_HOST;
 

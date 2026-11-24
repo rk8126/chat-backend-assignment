@@ -1,7 +1,7 @@
 import { randomUUID } from 'node:crypto';
-import { directKey, type ChatRepository } from '../src/repositories/chatRepository.js';
-import type { LastSeenResult, ListMessagesOptions, MessageStore } from '../src/repositories/messageStore.js';
-import type { Chat, ChatMember, LastSeen, MemberRole, Message, User } from '../src/types.js';
+import { directKey, type ChatRepository } from '../src/repositories/chatRepository';
+import type { LastSeenResult, ListMessagesOptions, MessageStore } from '../src/repositories/messageStore';
+import type { Chat, ChatMember, LastSeen, MemberRole, Message, User } from '../src/types';
 
 export class InMemoryChatRepository implements ChatRepository {
   users = new Map<string, User>();
