@@ -1,0 +1,41 @@
+{
+  "name": "chat-backend",
+  "version": "1.0.0",
+  "description": "1:1 and group chat backend — users/chats in PostgreSQL, messages & read receipts in Firebase Firestore",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "dev": "tsx watch src/server.ts",
+    "build": "tsc -p tsconfig.build.json",
+    "start": "node dist/server.js",
+    "migrate": "prisma migrate deploy",
+    "seed": "tsx src/scripts/seed.ts",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "migrate:dev": "prisma migrate dev",
+    "postinstall": "prisma generate",
+    "generate": "prisma generate"
+  },
+  "dependencies": {
+    "@prisma/adapter-pg": "^7.10.1",
+    "@prisma/client": "^7.10.1",
+    "express": "^5.1.0",
+    "firebase-admin": "^13.0.2",
+    "zod": "^3.24.1"
+  },
+  "devDependencies": {
+    "@types/express": "^5.0.0",
+    "@types/node": "^22.10.2",
+    "@types/pg": "^8.23.1",
+    "@types/supertest": "^6.0.2",
+    "pg": "^8.23.1",
+    "prisma": "^7.10.1",
+    "supertest": "^7.0.0",
+    "tsx": "^4.19.2",
+    "typescript": "^5.7.2",
+    "vitest": "^3.0.0"
+  }
+}
